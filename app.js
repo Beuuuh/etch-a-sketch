@@ -1,10 +1,24 @@
+const container = document.querySelector(".container");
+const colorWheel = document.querySelector("#color");
+const reset = document.querySelector("#reset");
+
+reset.addEventListener("click", resetGrid);
+
+let color = colorWheel.value;
+
+function resetGrid() {
+    container.innerText = "";
+    divCreator();
+}
+
 function divCreator() {
-    let canvas = 0;
-    let div;
-    while(canvas < 16) {
-        div = document.createElement("div");
-        document.querySelector(".container").appendChild(div);
-        canvas++;
+    for(canvas = 0; canvas < 16 * 16; canvas++) {
+        let div = document.createElement("div");
+        div.innerText = "test";
+        div.addEventListener("click", () => {
+            div.style.backgroundColor = "black";
+        });
+        container.appendChild(div);
     };
 };
 
