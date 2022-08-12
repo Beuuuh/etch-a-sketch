@@ -6,6 +6,10 @@ reset.addEventListener("click", resetGrid);
 
 let color = colorWheel.value;
 
+colorWheel.addEventListener("change", () => {
+    color = colorWheel.value;
+});
+
 function resetGrid() {
     container.innerText = "";
     divCreator();
@@ -16,7 +20,7 @@ function divCreator() {
         let div = document.createElement("div");
         div.innerText = "test";
         div.addEventListener("click", () => {
-            div.style.backgroundColor = "black";
+            div.style.backgroundColor = color;
         });
         container.appendChild(div);
     };
