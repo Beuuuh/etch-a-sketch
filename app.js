@@ -4,19 +4,28 @@ const reset = document.querySelector("#reset");
 const eraser = document.querySelector("#eraser");
 const random = document.querySelector("#randomizer");
 const colorButton = document.querySelector("#colorButton");
+const canvas = document.querySelector("#canvas");
+canvas.value = 16;
 
 let mode;
 let color = colorWheel.value;
+let size = canvas.value;
 
 reset.addEventListener("click", resetGrid);
 colorButton.addEventListener("click", () => {mode = "color"});
 random.addEventListener("click", () => {mode = "rainbow"});
 eraser.addEventListener("click", () => {mode = "eraser"});
+canvas.addEventListener("click", resize);
 
 function resetGrid() {
     container.innerText = "";
     divCreator();
-}
+};
+
+function resize() {
+    size = canvas.value;
+    resetGrid();
+};
 
 function changeColor(e) {
     if(mode == "rainbow") {
@@ -30,10 +39,10 @@ function changeColor(e) {
     } else if(mode == "eraser") {
         e.style.backgroundColor = "#ffffff";
     };
-}
+};
 
 function divCreator() {
-    for(canvas = 0; canvas < 16 * 16; canvas++) {
+    for(i = 0; i < size * size; i++) {
         let div = document.createElement("div");
         div.innerText = "test";
         div.addEventListener("click", () => {
