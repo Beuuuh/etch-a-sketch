@@ -42,9 +42,12 @@ function changeColor(e) {
 };
 
 function divCreator() {
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`
+
     for(i = 0; i < size * size; i++) {
         let div = document.createElement("div");
-        div.innerText = "test";
+        div.setAttribute("class", "pixel");
         div.addEventListener("click", () => {
             changeColor(div);
         });

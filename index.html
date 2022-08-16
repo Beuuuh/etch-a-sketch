@@ -10,19 +10,21 @@
 <body>
     <h1 class="title">Etch-a-Sketch</h1>
 
-    <div class="container">
-
+    <div class="main">
+        <div class="container"></div>
+        <div class="buttons">
+            <input type="color" id="color">
+            <button id="colorButton">Color mode</button>
+            <button id="eraser">Eraser</button>
+            <button id="randomizer">RANDOMIZER</button>
+            <button id="reset">Reset</button>
+            <input type="range" id="canvas" min="1" max="100">
+        </div>
     </div>
 
-    <div class="buttons">
-        <button id="reset">Reset</button>
-        <input type="range" id="canvas" min="1" max="100">
-        <input type="color" id="color">
-        <button id="colorButton">Color mode</button>
-        <button id="eraser">Eraser</button>
-        <button id="randomizer">RANDOMIZER</button>
+    <div class="footer">
+        <p>Copyright © <a href="#">Beuuuh.</a> In conjunction with <a href="https://www.theodinproject.com">The Odin Project</a></p>
     </div>
-
     <script src="./app.js"></script>
 </body>
 </html>
