@@ -60,6 +60,7 @@ input {
 button {
     padding: 10px;
     background-color: #6F6BF2;
+    border: 2px solid #0D0D0D;
     color: #EBEDF2;
 }
 
@@ -69,10 +70,6 @@ button {
     border: none;
     padding: 0;
     border: none;
-}
-
-#canvas {
-
 }
 
 .footer {
