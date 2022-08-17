@@ -4,6 +4,7 @@ const reset = document.querySelector("#reset");
 const eraser = document.querySelector("#eraser");
 const random = document.querySelector("#randomizer");
 const colorButton = document.querySelector("#colorButton");
+const sizeValue = document.querySelector("#sizevalue");
 const canvas = document.querySelector("#canvas");
 canvas.value = 16;
 
@@ -22,8 +23,13 @@ function resetGrid() {
     divCreator();
 };
 
+function updateSizeValue(value) {
+    sizeValue.innerHTML = `${value} x ${value}`
+}
+
 function resize() {
     size = canvas.value;
+    updateSizeValue(size);
     resetGrid();
 };
 
