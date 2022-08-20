@@ -5,6 +5,8 @@ const eraser = document.querySelector("#eraser");
 const random = document.querySelector("#randomizer");
 const colorButton = document.querySelector("#colorButton");
 const sizeValue = document.querySelector("#sizevalue");
+const checkbox = document.querySelector("#checkbox");
+const label = document.querySelector("#label");
 const canvas = document.querySelector("#canvas");
 canvas.value = 16;
 
@@ -17,10 +19,19 @@ colorButton.addEventListener("click", () => {mode = "color"});
 random.addEventListener("click", () => {mode = "rainbow"});
 eraser.addEventListener("click", () => {mode = "eraser"});
 canvas.addEventListener("click", resize);
+checkbox.addEventListener("click", divCreator);
 
 function resetGrid() {
     container.innerText = "";
     divCreator();
+};
+
+function enableGrid(e) {
+    if(checkbox.checked == true) {
+        e.style.border = "1px solid #AAA7F2";
+    } else {
+        e.style.border = "1px solid transparent"
+    };
 };
 
 function updateSizeValue(value) {
@@ -58,6 +69,7 @@ function divCreator() {
             changeColor(div);
         });
         container.appendChild(div);
+        enableGrid(div);
     };
 };
 
