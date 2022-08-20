@@ -18,7 +18,7 @@ input {
     border: none;
     color: inherit;
     font-family: inherit;
-    font-size: inherit;
+    font-size: 20px;
     cursor: pointer;
     outline: none;
 }
@@ -59,9 +59,13 @@ input {
 
 button {
     padding: 10px;
-    background-color: #6F6BF2;
-    border: 2px solid #0D0D0D;
-    color: #EBEDF2;
+    background-color: #AAA7F2;
+    border: 2px solid #6F6BF2;
+    color: #ffffff;
+}
+
+.check {
+    display: flex;
 }
 
 #color {
